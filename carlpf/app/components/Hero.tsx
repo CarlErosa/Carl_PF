@@ -20,7 +20,7 @@ export default function Hero() {
             I'm Carl !
           </h2>
           <p className="text-gray-600 text-sm uppercase tracking-wider mb-4">
-            <TextType 
+            <TextType
               text={["UI/UX Enthusiast", "Frontend Developer", "Web Developer", "Upcoming Backend Dev"]}
               typingSpeed={75}
               pauseDuration={1500}
@@ -29,10 +29,10 @@ export default function Hero() {
             />
           </p>
           <p className="text-gray-700 max-w-md leading-relaxed">
-           I'm an aspiring developer with a passion for creating clean, modern, and intentional digital experiences. I love exploring new tools and technologies, and I'm constantly improving my craft through hands-on projects.
+            I'm an aspiring developer with a passion for creating clean, modern, and intentional digital experiences. I love exploring new tools and technologies, and I'm constantly improving my craft through hands-on projects.
           </p>
         </div>
-        <div className="shrink-0 md:absolute md:right-[600px] md:-top-45">
+        <div className="shrink-0 md:absolute md:right-[500px] md:-top-45">
           <LanyardScene />
         </div>
       </div>
