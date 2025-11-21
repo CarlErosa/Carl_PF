@@ -185,7 +185,9 @@ export default function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
         </RigidBody>
       </group>
       <mesh ref={band}>
+        {/* @ts-expect-error - meshLineGeometry is extended via @react-three/fiber extend() */}
         <meshLineGeometry />
+        {/* @ts-expect-error - meshLineMaterial is extended via @react-three/fiber extend() */}
         <meshLineMaterial
           color="white"
           depthTest={false}
