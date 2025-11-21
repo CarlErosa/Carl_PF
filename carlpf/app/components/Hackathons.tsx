@@ -218,7 +218,7 @@ export default function Hackathons() {
             >
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 p-3 bg-white hover:bg-gray-100 rounded-full text-[#334B35] transition-all shadow-lg border-2 border-[#334B35]/20 z-10 hover:scale-110"
+                className="absolute top-16 right-4 p-3 bg-white hover:bg-gray-100 rounded-full text-[#334B35] transition-all shadow-lg border-2 border-[#334B35]/20 z-10 hover:scale-110"
                 aria-label="Close image"
               >
                 <X size={24} strokeWidth={2.5} />
