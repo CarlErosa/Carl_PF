@@ -44,7 +44,7 @@ export default function Projects() {
     {
       title: 'Algohub',
       description: 'A centralized learning platform for algorithms and data structures, offering interactive visualizations, problem walkthroughs, and step-by-step animations. Built to help beginners understand complex concepts through simplified, visual-first explanations.',
-      role: 'UI/UX Designer',
+      role: 'Fullstack Developer',
       liveUrl: 'https://algohub-dsa.vercel.app/learn',
       githubUrl: 'https://github.com/red-sakai/Algohub'
     }

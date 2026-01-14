@@ -30,8 +30,8 @@ export default function Hackathons() {
     {
       name: 'Uthak',
       year: '2025',
-      role: 'Frontend Developer',
-      placement: 'Finalist',
+      role: 'Fullstack Developer',
+      placement: '1st Runner up',
       rotation: '-2deg',
       image: '/assets/lanyard/uthak.jpg'
     }
