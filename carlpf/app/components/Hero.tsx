@@ -1,14 +1,13 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import NextImage from 'next/image';
 import TextType from './ui/TextType';
 import { ArrowDown } from 'lucide-react';
 
-const LanyardScene = dynamic(() => import('./ui/LanyardScene'), {
+const SkillOrbit = dynamic(() => import('./ui/SkillOrbit'), {
   ssr: false,
   loading: () => (
-    <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-secondary animate-pulse" />
+    <div className="w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[480px] md:h-[480px] rounded-full bg-secondary/50 animate-pulse" />
   ),
 });
 
@@ -16,16 +15,16 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="bg-background px-6 md:px-8 pt-28 pb-20 md:pt-36 md:pb-28 overflow-visible relative min-h-[90vh] flex items-center"
+      className="bg-background px-6 md:px-8 pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden relative min-h-[90vh] flex items-center"
     >
       <div className="absolute inset-0 pointer-events-none bg-noise" />
-      <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12">
-        <div className="flex-1 max-w-xl">
+      <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+        <div className="flex-1 max-w-xl z-10">
           <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-4">
             Developer & Designer
           </p>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight text-balance mb-4">
-            Hello, I'm{' '}
+            Hello, I&#39;m{' '}
             <span className="text-primary">Carl</span>
           </h2>
           <p className="text-muted-foreground text-sm uppercase tracking-wider mb-6 h-6">
@@ -43,9 +42,9 @@ export default function Hero() {
             />
           </p>
           <p className="text-muted-foreground max-w-md leading-relaxed mb-8">
-            I'm an aspiring developer with a passion for creating clean,
+            I&#39;m an aspiring developer with a passion for creating clean,
             modern, and intentional digital experiences. I love exploring new
-            tools and technologies, and I'm constantly improving my craft
+            tools and technologies, and I&#39;m constantly improving my craft
             through hands-on projects.
           </p>
           <div className="flex flex-wrap gap-3">
@@ -65,21 +64,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Desktop: 3D Lanyard / Mobile: Photo fallback */}
-        <div className="shrink-0">
-          <div className="hidden lg:block lg:relative lg:right-0">
-            <LanyardScene />
-          </div>
-          <div className="lg:hidden relative w-56 h-56 sm:w-64 sm:h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-border">
-            <NextImage
-              src="/assets/lanyard/picture.jpg"
-              alt="Carl Erosa"
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 224px, 256px"
-              priority
-            />
-          </div>
+        {/* Skill Orbit */}
+        <div className="shrink-0 flex items-center justify-center">
+          <SkillOrbit />
         </div>
       </div>
     </section>
