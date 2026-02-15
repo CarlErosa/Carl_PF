@@ -1,6 +1,7 @@
 'use client';
 
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { ExternalLink, Github } from 'lucide-react';
 
 export default function Projects() {
   const { ref, isVisible } = useScrollAnimation();
@@ -8,87 +9,119 @@ export default function Projects() {
   const projects = [
     {
       title: 'Verde',
-      description: 'A sustainability-focused mobile/web platform that helps users track their eco-friendly habits and environmental impact. The system visualizes daily progress, rewards consistent green actions, and encourages community-driven sustainability challenges.',
+      description:
+        'A sustainability-focused platform that helps users track eco-friendly habits and environmental impact with daily progress visualization and community challenges.',
       role: 'Fullstack Developer',
       liveUrl: 'https://verdepm.vercel.app/',
-      githubUrl: 'https://github.com/marvinjameserosa/verdepm'
+      githubUrl: 'https://github.com/marvinjameserosa/verdepm',
     },
     {
       title: 'ICPEP NCR Website',
-      description: 'A modern, streamlined CRM interface designed for ICPEP NCR to help them manage member records, events, and organizational operations. Built with an intuitive UX for non-technical users, the UI improves workflow efficiency and centralizes key organizational data.',
+      description:
+        'A modern CRM interface for ICPEP NCR to manage member records, events, and organizational operations with an intuitive UX for non-technical users.',
       role: 'UI/UX Designer',
       liveUrl: 'https://icpepsencr.vercel.app/',
-      githubUrl: 'https://github.com/icpepsepupm/ICPEP-NCR_CRM-Website'
+      githubUrl: 'https://github.com/icpepsepupm/ICPEP-NCR_CRM-Website',
     },
     {
       title: 'LOGISTIQ',
-      description: 'A logistics management dashboard that optimizes delivery operations through real-time tracking, route insights, and automated status updates. The platform simplifies fleet coordination, reduces delays, and provides a clean analytic view of operational performance.',
+      description:
+        'A logistics management dashboard optimizing delivery operations through real-time tracking, route insights, and automated status updates.',
       role: 'Fullstack Developer',
       liveUrl: 'https://logistiq.onrender.com/',
-      githubUrl: 'https://github.com/red-sakai/LogistIQ'
+      githubUrl: 'https://github.com/red-sakai/LogistIQ',
     },
     {
       title: 'Weathering With Us',
-      description: 'A weather-based companion app that personalizes recommendations depending on real-time conditions — whether it\'s what to wear, when to leave, or how to prepare. It creates a friendly, humanized experience around weather forecasting.',
+      description:
+        "A weather companion app that personalizes recommendations based on real-time conditions -- what to wear, when to leave, how to prepare.",
       role: 'Fullstack Developer',
       liveUrl: 'https://weatheringwithus.vercel.app/',
-      githubUrl: 'https://github.com/CarlErosa/Weathering-With-Us'
+      githubUrl: 'https://github.com/CarlErosa/Weathering-With-Us',
     },
     {
       title: 'BatchMail',
-      description: 'A lightweight automation tool that sends event-triggered email messages. Designed to reduce repetitive communication tasks, the system supports templating, batching, and integrations to streamline outreach for teams and organizations.',
+      description:
+        'A lightweight automation tool for event-triggered email messages, supporting templating, batching, and integrations for team outreach.',
       role: 'Backend Developer',
       liveUrl: 'https://batchmailbeta.vercel.app/',
-      githubUrl: 'https://github.com/marvinjameserosa/batchmail'
+      githubUrl: 'https://github.com/marvinjameserosa/batchmail',
     },
     {
       title: 'Algohub',
-      description: 'A centralized learning platform for algorithms and data structures, offering interactive visualizations, problem walkthroughs, and step-by-step animations. Built to help beginners understand complex concepts through simplified, visual-first explanations.',
+      description:
+        'A centralized learning platform for algorithms and data structures with interactive visualizations and step-by-step animations.',
       role: 'Fullstack Developer',
       liveUrl: 'https://algohub-dsa.vercel.app/learn',
-      githubUrl: 'https://github.com/red-sakai/Algohub'
-    }
+      githubUrl: 'https://github.com/red-sakai/Algohub',
+    },
   ];
 
   return (
-    <section id="projects" ref={ref} className="bg-[#f5f1e8] px-8 md:px-16 lg:px-24 py-20 md:py-24 relative">
-      {/* Noise texture overlay */}
-      <div className="absolute inset-0 pointer-events-none bg-noise"></div>
-      <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h3 className="text-4xl md:text-5xl font-bold text-[#334B35] mb-4">Projects</h3>
-          <div className="w-24 h-1 bg-yellow-400 rounded-full mx-auto"></div>
+    <section
+      id="projects"
+      ref={ref}
+      className="bg-background px-6 md:px-8 lg:px-16 py-20 md:py-28 relative"
+    >
+      <div className="absolute inset-0 pointer-events-none bg-noise" />
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div
+          className={`text-center mb-14 transition-all duration-700 ${
+            isVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <h3 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+            Projects
+          </h3>
+          <p className="text-muted-foreground max-w-lg mx-auto">
+            A selection of things I've built and collaborated on.
+          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`bg-white/60 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-white/20 text-[#334B35] hover:shadow-xl transition-all duration-700 hover:-translate-y-1 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              className={`group bg-card p-6 rounded-xl border border-border shadow-sm hover:shadow-md hover:border-accent/40 transition-all duration-700 flex flex-col ${
+                isVisible
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-10'
+              }`}
               style={{ transitionDelay: `${index * 100 + 200}ms` }}
             >
-              <div className="flex items-start justify-between mb-3">
-                <h4 className="text-2xl font-bold">{project.title}</h4>
-                <span className="inline-block px-3 py-1 bg-yellow-400 text-black text-xs font-semibold rounded-full whitespace-nowrap ml-2">
+              <div className="flex items-start justify-between mb-3 gap-2">
+                <h4 className="text-lg font-bold text-card-foreground">
+                  {project.title}
+                </h4>
+                <span className="shrink-0 px-2.5 py-1 bg-accent/15 text-accent-foreground text-xs font-medium rounded-md">
                   {project.role}
                 </span>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6">{project.description}</p>
-              <div className="flex gap-3">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
+                {project.description}
+              </p>
+              <div className="flex gap-2">
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-[#334B35] px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#4a6b49] text-white transition-colors duration-300 text-center"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-primary px-4 py-2.5 rounded-lg text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+                  aria-label={`View ${project.title} live site`}
                 >
+                  <ExternalLink size={14} aria-hidden="true" />
                   View
                 </a>
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-transparent px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-100 text-[#334B35] border-2 border-[#334B35] transition-colors duration-300 text-center"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-card-foreground border border-border hover:bg-secondary transition-colors"
+                  aria-label={`View ${project.title} source code on GitHub`}
                 >
-                  Github
+                  <Github size={14} aria-hidden="true" />
+                  GitHub
                 </a>
               </div>
             </div>
