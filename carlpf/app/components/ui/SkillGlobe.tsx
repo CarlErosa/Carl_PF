@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useMemo, useEffect, useState } from 'react';
+import { useRef, useMemo, useEffect, useState, ReactElement } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Html, Float } from '@react-three/drei';
 import * as THREE from 'three';
@@ -106,7 +106,7 @@ function GridLines() {
   });
 
   const lines = useMemo(() => {
-    const items: JSX.Element[] = [];
+    const items: ReactElement[] = [];
     // Latitude
     for (let i = 1; i < 6; i++) {
       const phi = (i / 6) * Math.PI;
