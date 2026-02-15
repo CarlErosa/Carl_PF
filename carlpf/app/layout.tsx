@@ -1,20 +1,37 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#334B35",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: "Carl Erosa | Portfolio",
-  description: "Full-stack developer and UI/UX designer specializing in web applications, sustainability tech, and data structures education. Explore my projects including Verde, ICPEP NCR, LOGISTIQ, and more.",
+  title: "Carl Erosa | Developer & Designer",
+  description:
+    "Full-stack developer and UI/UX designer specializing in web applications, sustainability tech, and data structures education. Explore my projects including Verde, ICPEP NCR, LOGISTIQ, and more.",
+  openGraph: {
+    title: "Carl Erosa | Developer & Designer",
+    description:
+      "Full-stack developer and UI/UX designer building clean, modern digital experiences.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Carl Erosa | Developer & Designer",
+    description:
+      "Full-stack developer and UI/UX designer building clean, modern digital experiences.",
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.className} ${geistMono.className} antialiased`}
       >
         {children}
       </body>
