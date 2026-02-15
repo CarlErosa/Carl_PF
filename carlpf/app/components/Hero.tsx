@@ -4,10 +4,10 @@ import dynamic from 'next/dynamic';
 import TextType from './ui/TextType';
 import { ArrowDown } from 'lucide-react';
 
-const SkillOrbit = dynamic(() => import('./ui/SkillOrbit'), {
+const SkillGlobe = dynamic(() => import('./ui/SkillGlobe'), {
   ssr: false,
   loading: () => (
-    <div className="w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[480px] md:h-[480px] rounded-full bg-secondary/50 animate-pulse" />
+    <div className="w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] md:w-[520px] md:h-[520px] rounded-full bg-secondary/30 animate-pulse" />
   ),
 });
 
@@ -64,9 +64,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Skill Orbit */}
-        <div className="shrink-0 flex items-center justify-center">
-          <SkillOrbit />
+        {/* 3D Skill Globe */}
+        <div className="shrink-0 flex items-center justify-center -mr-4 lg:-mr-8">
+          <SkillGlobe />
         </div>
       </div>
     </section>
