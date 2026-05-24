@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
+import CursorFollower from "./components/CursorFollower";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,26 +12,26 @@ const geistMono = Geist_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#334B35",
+  themeColor: "#1E2E20",
   width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
-  title: "Carl Erosa | Developer & Designer",
+  title: "Carl Erosa | Software & Cloud Engineer",
   description:
-    "Full-stack developer and UI/UX designer specializing in web applications, sustainability tech, and data structures education. Explore my projects including Verde, ICPEP NCR, LOGISTIQ, and more.",
+    "Software & Cloud Engineer specializing in scalable backend systems, cloud infrastructure, CI/CD pipelines, and full-stack web development.",
   openGraph: {
-    title: "Carl Erosa | Developer & Designer",
+    title: "Carl Erosa | Software & Cloud Engineer",
     description:
-      "Full-stack developer and UI/UX designer building clean, modern digital experiences.",
+      "Software & Cloud Engineer specializing in scalable backend systems, cloud infrastructure, CI/CD pipelines, and full-stack web development.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Carl Erosa | Developer & Designer",
+    title: "Carl Erosa | Software & Cloud Engineer",
     description:
-      "Full-stack developer and UI/UX designer building clean, modern digital experiences.",
+      "Software & Cloud Engineer specializing in scalable backend systems, cloud infrastructure, CI/CD pipelines, and full-stack web development.",
   },
 };
 
@@ -44,6 +45,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${geistMono.className} antialiased`}
       >
+        <CursorFollower />
         {children}
       </body>
     </html>

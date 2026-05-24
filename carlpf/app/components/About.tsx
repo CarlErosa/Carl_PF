@@ -1,126 +1,114 @@
 'use client';
 
-import RotatingText from './ui/RotatingText';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { motion } from 'motion/react';
 import NextImage from 'next/image';
-import { Palette, Target, Zap } from 'lucide-react';
+import { Wrench, Target, Zap } from 'lucide-react';
+
+const highlights = [
+  {
+    icon: Wrench,
+    title: 'Tools',
+    description: 'Node.js, Docker, AWS, Next.js, PostgreSQL, GitHub Actions',
+  },
+  {
+    icon: Target,
+    title: 'Focus',
+    description: 'Cloud infrastructure, Backend systems, CI/CD & DevOps',
+  },
+  {
+    icon: Zap,
+    title: 'Quick Facts',
+    description: 'Systems thinker, Backend-first, Scales under pressure',
+  },
+];
 
 export default function About() {
-  const { ref, isVisible } = useScrollAnimation();
-
-  const highlights = [
-    {
-      icon: Palette,
-      title: 'Tools',
-      description: 'Figma, React, Tailwind, Next.js',
-    },
-    {
-      icon: Target,
-      title: 'Focus',
-      description: 'Design systems, Accessibility, Interaction design',
-    },
-    {
-      icon: Zap,
-      title: 'Quick Facts',
-      description: 'Problem-solver, Team player, Frontend enthusiast',
-    },
-  ];
-
   return (
-    <section
-      id="about"
-      ref={ref}
-      className="bg-primary px-6 md:px-8 lg:px-16 py-20 md:py-28"
-    >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-          {/* Photo */}
-          <div
-            className={`md:col-span-4 transition-all duration-700 ${
-              isVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-10'
-            }`}
-          >
-            <div className="relative w-full aspect-[3/4] max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg border-2 border-primary-foreground/20">
+    <section id="about" className="bg-[#111714] px-8 md:px-12 lg:px-16 py-28 md:py-36 border-t border-[#1F2D22]">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-80px' }}
+          className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start"
+        >
+          <div className="md:col-span-4">
+            <div className="relative w-full aspect-[3/4] max-w-sm md:max-w-md mx-auto rounded-2xl overflow-hidden border border-[#1F2D22]">
               <NextImage
                 src="/assets/lanyard/picture.jpg"
-                alt="Carl Erosa - Developer and Designer"
+                alt="Carl Erosa - Software & Cloud Engineer"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 500px"
               />
             </div>
           </div>
 
-          {/* Content */}
-          <div
-            className={`md:col-span-8 text-primary-foreground transition-all duration-700 delay-200 ${
-              isVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-10'
-            }`}
-          >
-            <h3 className="text-3xl md:text-5xl font-bold mb-8">
-              <span className="text-primary-foreground">About </span>
-              <span className="inline-block">
-                <span className="inline-block bg-accent px-4 md:px-6 py-2 md:py-3 rounded-xl shadow-md">
-                  <RotatingText
-                    texts={['Me', 'Carl', 'a Developer']}
-                    rotationInterval={2500}
-                    staggerDuration={0.03}
-                    mainClassName="text-accent-foreground font-bold"
-                  />
-                </span>
+          <div className="md:col-span-8">
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-bold text-foreground mb-10"
+            >
+              About{' '}
+              <span className="inline-block bg-[#3A5E3D] px-5 md:px-8 py-2.5 md:py-4 rounded-xl text-[#E8EDE9] font-mono text-3xl md:text-5xl">
+                Me
               </span>
-            </h3>
+            </motion.h3>
 
-            <div className="space-y-4 text-base md:text-lg leading-relaxed text-primary-foreground/85">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="space-y-5 text-lg md:text-xl leading-relaxed text-[#7A9180]"
+            >
               <p>
-                I am a student taking a degree of{' '}
-                <strong className="font-semibold text-accent">
-                  Bachelor of Science in Computer Engineering
+                I&#39;m a{' '}
+                <strong className="font-semibold text-[#6FCF7C]">
+                  Computer Engineering
                 </strong>{' '}
-                at{' '}
-                <strong className="font-semibold text-primary-foreground">
-                  Polytechnic University of the Philippines - Sta Mesa Manila
+                student at{' '}
+                <strong className="font-semibold text-foreground">
+                  Polytechnic University of the Philippines
                 </strong>
-                .
+                . I specialize in backend systems, cloud deployment, and
+                full-stack development — building platforms that hold up
+                under real-world load.
               </p>
-              <p>
-                I have been very fond of{' '}
-                <strong className="font-semibold text-accent">designing</strong>
-                , whether it is for print or UI/UX designs. Though I may not be
-                the best, I take pride in every output I make, treating it as a{' '}
-                <strong className="font-semibold text-primary-foreground">
-                  piece of art and a product of my creativity
-                </strong>
-                , a piece of me.
-              </p>
-            </div>
+            </motion.div>
 
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              viewport={{ once: true }}
+              className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6"
+            >
               {highlights.map((item) => (
                 <div
                   key={item.title}
-                  className="bg-primary-foreground/10 backdrop-blur-sm p-5 rounded-xl border border-primary-foreground/10 hover:bg-primary-foreground/15 transition-colors duration-300"
+                  className="bg-[#0D0F0E] p-6 rounded-xl border border-[#1F2D22] hover:border-[#3A5E3D] transition-colors duration-300"
                 >
                   <item.icon
-                    size={20}
-                    className="text-accent mb-3"
+                    size={24}
+                    className="text-[#6FCF7C] mb-4"
                     aria-hidden="true"
                   />
-                  <h5 className="font-semibold mb-2 text-primary-foreground">
+                  <h5 className="font-semibold mb-2 text-foreground font-mono text-base tracking-wider uppercase">
                     {item.title}
                   </h5>
-                  <p className="text-sm leading-relaxed text-primary-foreground/70">
+                  <p className="text-base leading-relaxed text-[#7A9180]">
                     {item.description}
                   </p>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

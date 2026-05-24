@@ -1,12 +1,12 @@
 'use client';
 
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { motion } from 'motion/react';
 
-type Tier = 'Proficient' | 'Comfortable' | 'Learning';
+type Proficiency = 'Proficient' | 'Comfortable';
 
 interface SkillItem {
   name: string;
-  tier: Tier;
+  proficiency: Proficiency;
 }
 
 interface SkillCategory {
@@ -14,106 +14,108 @@ interface SkillCategory {
   skills: SkillItem[];
 }
 
-const tierColors: Record<Tier, string> = {
-  Proficient: 'bg-primary text-primary-foreground',
-  Comfortable: 'bg-accent text-accent-foreground',
-  Learning: 'bg-secondary text-secondary-foreground',
-};
+function ProficiencyDots({ level }: { level: Proficiency }) {
+  const count = level === 'Proficient' ? 3 : 2;
+  return (
+    <div className="flex items-center gap-1.5">
+      {[0, 1, 2].map((i) => (
+        <span
+          key={i}
+          className={`w-2.5 h-2.5 rounded-full ${
+            i < count ? 'bg-[#6FCF7C]' : 'bg-[#1F2D22]'
+          }`}
+        />
+      ))}
+      <span className="ml-2 text-xs font-mono text-[#7A9180] uppercase tracking-wider">
+        {level}
+      </span>
+    </div>
+  );
+}
 
 const categories: SkillCategory[] = [
   {
-    title: 'UI Design',
+    title: 'Cloud & DevOps',
     skills: [
-      { name: 'Figma', tier: 'Proficient' },
-      { name: 'Canva', tier: 'Proficient' },
-      { name: 'Photoshop', tier: 'Comfortable' },
+      { name: 'AWS', proficiency: 'Proficient' },
+      { name: 'Docker', proficiency: 'Proficient' },
+      { name: 'GitHub Actions', proficiency: 'Proficient' },
+      { name: 'CI/CD', proficiency: 'Proficient' },
+      { name: 'Vercel', proficiency: 'Proficient' },
+      { name: 'Linux', proficiency: 'Proficient' },
     ],
   },
   {
-    title: 'Frontend',
+    title: 'Development',
     skills: [
-      { name: 'HTML/CSS', tier: 'Proficient' },
-      { name: 'Tailwind', tier: 'Proficient' },
-      { name: 'React & Next.js', tier: 'Comfortable' },
-      { name: 'JavaScript', tier: 'Comfortable' },
+      { name: 'Node.js', proficiency: 'Proficient' },
+      { name: 'FastAPI', proficiency: 'Proficient' },
+      { name: 'React & Next.js', proficiency: 'Proficient' },
+      { name: 'TypeScript', proficiency: 'Proficient' },
+      { name: 'PostgreSQL', proficiency: 'Proficient' },
+      { name: 'Supabase', proficiency: 'Proficient' },
     ],
   },
   {
-    title: 'Backend & Database',
+    title: 'Tools & Networking',
     skills: [
-      { name: 'SQL', tier: 'Comfortable' },
-      { name: 'Python', tier: 'Comfortable' },
-      { name: 'Node.js', tier: 'Learning' },
-      { name: 'Supabase', tier: 'Learning' },
+      { name: 'Postman', proficiency: 'Comfortable' },
+      { name: 'Cisco Packet Tracer', proficiency: 'Comfortable' },
+      { name: 'Git/GitHub', proficiency: 'Comfortable' },
+      { name: 'API Integration', proficiency: 'Comfortable' },
     ],
   },
 ];
 
 export default function Skills() {
-  const { ref, isVisible } = useScrollAnimation();
-
   return (
     <section
       id="skills"
-      ref={ref}
-      className="bg-background px-6 md:px-8 lg:px-16 py-20 md:py-28 relative"
+      className="bg-background px-8 md:px-12 lg:px-16 py-28 md:py-36 relative border-t border-[#1F2D22]"
     >
       <div className="absolute inset-0 pointer-events-none bg-noise" />
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div
-          className={`text-center mb-14 transition-all duration-700 ${
-            isVisible
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-10'
-          }`}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-80px' }}
+          className="text-center mb-16"
         >
-          <h3 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Skills at a Glance
+          <h3 className="text-4xl md:text-6xl font-bold text-foreground mb-5 text-balance">
+            Skills
           </h3>
-          <p className="text-muted-foreground max-w-lg mx-auto">
-            Grouped by proficiency -- always learning, always building.
+          <p className="text-[#7A9180] font-mono text-base max-w-lg mx-auto">
+            Technologies I work with daily.
           </p>
-          {/* Tier legend */}
-          <div className="flex flex-wrap justify-center gap-4 mt-6">
-            {(Object.keys(tierColors) as Tier[]).map((tier) => (
-              <span
-                key={tier}
-                className="flex items-center gap-2 text-xs font-medium text-muted-foreground"
-              >
-                <span
-                  className={`inline-block w-3 h-3 rounded-full ${tierColors[tier]}`}
-                />
-                {tier}
-              </span>
-            ))}
-          </div>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {categories.map((category, catIdx) => (
-            <div
+            <motion.div
               key={category.title}
-              className={`bg-card p-6 md:p-8 rounded-xl border border-border shadow-sm hover:shadow-md transition-all duration-700 ${
-                isVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-10'
-              }`}
-              style={{ transitionDelay: `${catIdx * 150 + 200}ms` }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: catIdx * 0.15, ease: 'easeOut' }}
+              viewport={{ once: true, margin: '-80px' }}
+              whileHover={{ scale: 1.03 }}
+              className="bg-[#111714] p-8 md:p-10 rounded-lg border border-[#1F2D22] transition-all duration-300 hover:border-[#6FCF7C] hover:shadow-[0_0_12px_rgba(111,207,124,0.15)]"
             >
-              <h4 className="text-lg font-bold text-card-foreground mb-6">
+              <h4 className="text-xl font-bold text-foreground mb-3 font-mono tracking-tight">
                 {category.title}
               </h4>
-              <div className="flex flex-wrap gap-2">
+              <ProficiencyDots level="Proficient" />
+              <div className="mt-8 flex flex-wrap gap-3">
                 {category.skills.map((skill) => (
                   <span
                     key={skill.name}
-                    className={`px-3 py-1.5 rounded-lg text-sm font-medium ${tierColors[skill.tier]}`}
+                    className="px-4 py-2 rounded-full text-base font-mono bg-[#1A2E1C] text-[#6FCF7C]"
                   >
                     {skill.name}
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

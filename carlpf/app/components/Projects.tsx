@@ -1,130 +1,189 @@
 'use client';
 
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { motion } from 'motion/react';
 import { ExternalLink, Github } from 'lucide-react';
 
+interface ProjectStack {
+  [key: string]: string[];
+}
+
+const projectStacks: ProjectStack = {
+  Verde: ['Next.js', 'PostgreSQL', 'API Integration', 'Node.js'],
+  ADPH: ['Node.js', 'PostgreSQL', 'CI/CD', 'Docker'],
+  BatchMail: ['Node.js', 'Automation', 'PostgreSQL'],
+  BlockBayan: ['Next.js', 'Solidity', 'Web3', 'TypeScript'],
+  ICPEP: ['React', 'TypeScript', 'Tailwind'],
+  LOGISTIQ: ['React', 'Node.js', 'PostgreSQL'],
+  Weathering: ['Next.js', 'React', 'API Integration'],
+  Algohub: ['React', 'TypeScript', 'Next.js'],
+};
+
+const projects = [
+  {
+    title: 'Verde',
+    description:
+      'ESG platform for tracking carbon emissions in construction. 1st Runner-Up, PUP Uthak Hackathon. Built real-time data processing and API integration.',
+    role: 'Fullstack Engineer',
+    liveUrl: 'https://verdepm.vercel.app/',
+    githubUrl: 'https://github.com/marvinjameserosa/verdepm',
+    key: 'Verde',
+  },
+  {
+    title: 'ADPH Registration Platform',
+    description:
+      'National registration platform for Arduino Day Philippines handling 25,000+ requests and 1,000+ concurrent users. Full CI/CD lifecycle, query optimization, production rollout.',
+    role: 'Infrastructure & Backend Engineer',
+    liveUrl: 'https://join.arduinodayphilippines.cc/',
+    githubUrl: '#',
+    key: 'ADPH',
+  },
+  {
+    title: 'BatchMail',
+    description:
+      'Automated bulk email system for 1,000+ users. Batch processing and automation workflows.',
+    role: 'Backend Engineer',
+    liveUrl: 'https://batchmailbeta.vercel.app/',
+    githubUrl: 'https://github.com/marvinjameserosa/batchmail',
+    key: 'BatchMail',
+  },
+  {
+    title: 'BlockBayan',
+    description:
+      'Blockchain-based donation tracker for transparent transactions. Top 8, PUP ICTO Hackathon.',
+    role: 'Fullstack Engineer',
+    liveUrl: 'https://blockbayan.vercel.app/',
+    githubUrl: '#',
+    key: 'BlockBayan',
+  },
+  {
+    title: 'ICPEP NCR Website',
+    description:
+      'A modern CRM interface for ICPEP NCR to manage member records, events, and organizational operations with an intuitive UX for non-technical users.',
+    role: 'UI/UX Designer',
+    liveUrl: 'https://icpepsencr.vercel.app/',
+    githubUrl: 'https://github.com/icpepsepupm/ICPEP-NCR_CRM-Website',
+    key: 'ICPEP',
+  },
+  {
+    title: 'LOGISTIQ',
+    description:
+      'A logistics management dashboard optimizing delivery operations through real-time tracking, route insights, and automated status updates.',
+    role: 'Fullstack Developer',
+    liveUrl: 'https://logistiq.onrender.com/',
+    githubUrl: 'https://github.com/red-sakai/LogistIQ',
+    key: 'LOGISTIQ',
+  },
+  {
+    title: 'Weathering With Us',
+    description:
+      'A weather companion app that personalizes recommendations based on real-time conditions — what to wear, when to leave, how to prepare.',
+    role: 'Fullstack Developer',
+    liveUrl: 'https://weatheringwithus.vercel.app/',
+    githubUrl: 'https://github.com/CarlErosa/Weathering-With-Us',
+    key: 'Weathering',
+  },
+  {
+    title: 'Algohub',
+    description:
+      'A centralized learning platform for algorithms and data structures with interactive visualizations and step-by-step animations.',
+    role: 'Fullstack Developer',
+    liveUrl: 'https://algohub-dsa.vercel.app/learn',
+    githubUrl: 'https://github.com/red-sakai/Algohub',
+    key: 'Algohub',
+  },
+];
+
 export default function Projects() {
-  const { ref, isVisible } = useScrollAnimation();
-
-  const projects = [
-    {
-      title: 'Verde',
-      description:
-        'A sustainability-focused platform that helps users track eco-friendly habits and environmental impact with daily progress visualization and community challenges.',
-      role: 'Fullstack Developer',
-      liveUrl: 'https://verdepm.vercel.app/',
-      githubUrl: 'https://github.com/marvinjameserosa/verdepm',
-    },
-    {
-      title: 'ICPEP NCR Website',
-      description:
-        'A modern CRM interface for ICPEP NCR to manage member records, events, and organizational operations with an intuitive UX for non-technical users.',
-      role: 'UI/UX Designer',
-      liveUrl: 'https://icpepsencr.vercel.app/',
-      githubUrl: 'https://github.com/icpepsepupm/ICPEP-NCR_CRM-Website',
-    },
-    {
-      title: 'LOGISTIQ',
-      description:
-        'A logistics management dashboard optimizing delivery operations through real-time tracking, route insights, and automated status updates.',
-      role: 'Fullstack Developer',
-      liveUrl: 'https://logistiq.onrender.com/',
-      githubUrl: 'https://github.com/red-sakai/LogistIQ',
-    },
-    {
-      title: 'Weathering With Us',
-      description:
-        "A weather companion app that personalizes recommendations based on real-time conditions -- what to wear, when to leave, how to prepare.",
-      role: 'Fullstack Developer',
-      liveUrl: 'https://weatheringwithus.vercel.app/',
-      githubUrl: 'https://github.com/CarlErosa/Weathering-With-Us',
-    },
-    {
-      title: 'BatchMail',
-      description:
-        'A lightweight automation tool for event-triggered email messages, supporting templating, batching, and integrations for team outreach.',
-      role: 'Backend Developer',
-      liveUrl: 'https://batchmailbeta.vercel.app/',
-      githubUrl: 'https://github.com/marvinjameserosa/batchmail',
-    },
-    {
-      title: 'Algohub',
-      description:
-        'A centralized learning platform for algorithms and data structures with interactive visualizations and step-by-step animations.',
-      role: 'Fullstack Developer',
-      liveUrl: 'https://algohub-dsa.vercel.app/learn',
-      githubUrl: 'https://github.com/red-sakai/Algohub',
-    },
-  ];
-
   return (
     <section
       id="projects"
-      ref={ref}
-      className="bg-background px-6 md:px-8 lg:px-16 py-20 md:py-28 relative"
+      className="bg-background px-8 md:px-12 lg:px-16 py-28 md:py-36 relative border-t border-[#1F2D22]"
     >
       <div className="absolute inset-0 pointer-events-none bg-noise" />
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div
-          className={`text-center mb-14 transition-all duration-700 ${
-            isVisible
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-10'
-          }`}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-80px' }}
+          className="text-center mb-16"
         >
-          <h3 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+          <h3 className="text-4xl md:text-6xl font-bold text-foreground mb-5 text-balance">
             Projects
           </h3>
-          <p className="text-muted-foreground max-w-lg mx-auto">
-            A selection of things I've built and collaborated on.
+          <p className="text-[#7A9180] font-mono text-base max-w-lg mx-auto">
+            Systems and platforms I&apos;ve built.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className={`group bg-card p-6 rounded-xl border border-border shadow-sm hover:shadow-md hover:border-accent/40 transition-all duration-700 flex flex-col ${
-                isVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-10'
-              }`}
-              style={{ transitionDelay: `${index * 100 + 200}ms` }}
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+                ease: 'easeOut',
+              }}
+              viewport={{ once: true, margin: '-80px' }}
+              whileHover={{ scale: 1.02 }}
+              className="group bg-[#111714] rounded-lg border border-transparent transition-all duration-300 hover:border-[#3A5E3D] hover:shadow-[0_0_16px_rgba(58,94,61,0.2)] flex flex-col relative overflow-hidden"
             >
-              <div className="flex items-start justify-between mb-3 gap-2">
-                <h4 className="text-lg font-bold text-card-foreground">
-                  {project.title}
-                </h4>
-                <span className="shrink-0 px-2.5 py-1 bg-accent/15 text-accent-foreground text-xs font-medium rounded-md">
-                  {project.role}
-                </span>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-[rgba(58,94,61,0.08)] to-transparent pointer-events-none" />
+              <div className="p-8 flex flex-col flex-1 relative z-10">
+                <div className="flex items-start justify-between mb-4 gap-3">
+                  <h4 className="text-xl font-bold text-foreground group-hover:text-[#6FCF7C] transition-colors duration-300">
+                    {project.title}
+                  </h4>
+                  <span className="shrink-0 px-3 py-1 bg-[#1A2E1C] text-[#6FCF7C] text-sm font-mono rounded-md">
+                    {project.role}
+                  </span>
+                </div>
+                <p className="text-[#7A9180] text-base leading-relaxed mb-5 flex-1">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {(projectStacks[project.key] || []).map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 text-sm font-mono rounded-full bg-[#1A2E1C] text-[#6FCF7C]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 bg-[#3A5E3D] px-6 py-3.5 min-h-[48px] rounded-lg text-base font-medium text-[#E8EDE9] hover:bg-[#4A7A4F] transition-colors group/btn"
+                    aria-label={`View ${project.title} live site`}
+                  >
+                    <ExternalLink size={16} aria-hidden="true" />
+                    View
+                    <span className="inline-block opacity-0 -translate-x-1 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all duration-200">
+                      →
+                    </span>
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 min-h-[48px] rounded-lg text-base font-medium text-foreground border border-[#1F2D22] hover:bg-[#1F2D22] transition-colors group/btn"
+                    aria-label={`View ${project.title} source code on GitHub`}
+                  >
+                    <Github size={16} aria-hidden="true" />
+                    GitHub
+                    <span className="inline-block opacity-0 -translate-x-1 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all duration-200">
+                      →
+                    </span>
+                  </a>
+                </div>
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
-                {project.description}
-              </p>
-              <div className="flex gap-2">
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-primary px-4 py-2.5 rounded-lg text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
-                  aria-label={`View ${project.title} live site`}
-                >
-                  <ExternalLink size={14} aria-hidden="true" />
-                  View
-                </a>
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-card-foreground border border-border hover:bg-secondary transition-colors"
-                  aria-label={`View ${project.title} source code on GitHub`}
-                >
-                  <Github size={14} aria-hidden="true" />
-                  GitHub
-                </a>
-              </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
