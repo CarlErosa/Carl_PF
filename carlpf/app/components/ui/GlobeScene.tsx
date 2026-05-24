@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useMemo, useState, useEffect } from 'react';
+import { useRef, useMemo, useState, useEffect, memo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Html } from '@react-three/drei';
 import * as THREE from 'three';
@@ -242,7 +242,7 @@ function Scene({ onDragChange }: { onDragChange: (dragging: boolean) => void }) 
   );
 }
 
-export default function GlobeScene() {
+const GlobeScene = memo(function GlobeScene() {
   const [isDragging, setIsDragging] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -255,16 +255,22 @@ export default function GlobeScene() {
       className={`w-[380px] h-[380px] sm:w-[480px] sm:h-[480px] md:w-[600px] md:h-[600px] lg:w-[680px] lg:h-[680px] transition-opacity duration-1000 ${
         mounted ? 'opacity-100' : 'opacity-0'
       }`}
-      style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+      style={{
+        cursor: isDragging ? 'grabbing' : 'grab',
+        willChange: 'transform',
+      }}
     >
       <Canvas
         camera={{ position: [0, 0.3, 6], fov: 40 }}
         dpr={[1, 2]}
-        style={{ background: 'transparent' }}
+        frameloop="demand"
+        style={{ background: 'transparent', display: 'block' }}
         gl={{ alpha: true, antialias: true }}
       >
         <Scene onDragChange={setIsDragging} />
       </Canvas>
     </div>
   );
-}
+});
+
+export default GlobeScene;

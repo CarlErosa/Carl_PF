@@ -15,7 +15,7 @@ const GlobeScene = dynamic(() => import('./ui/GlobeScene'), {
 const nameLetters = 'CARL.'.split('');
 
 export default function Hero() {
-  const { displayed, isDone } = useTypewriter('Software & Cloud Engineer', 80);
+  const { displayed, isDone } = useTypewriter('Builder with a passion for scaling', 80);
 
   return (
     <section

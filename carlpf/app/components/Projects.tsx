@@ -31,7 +31,7 @@ const projects = [
   {
     title: 'ADPH Registration Platform',
     description:
-      'National registration platform for Arduino Day Philippines handling 25,000+ requests and 1,000+ concurrent users. Full CI/CD lifecycle, query optimization, production rollout.',
+      'National registration platform for Arduino Day Philippines handling 50,000+ requests and 1,000+ concurrent users. Full CI/CD lifecycle, query optimization, production rollout.',
     role: 'Infrastructure & Backend Engineer',
     liveUrl: 'https://join.arduinodayphilippines.cc/',
     githubUrl: '#',

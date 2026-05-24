@@ -27,10 +27,10 @@ export default function About() {
     <section id="about" className="bg-[#111714] px-8 md:px-12 lg:px-16 py-28 md:py-36 border-t border-[#1F2D22]">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, amount: 0.1, margin: '-40px' }}
           className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start"
         >
           <div className="md:col-span-4">
@@ -75,7 +75,7 @@ export default function About() {
                 <strong className="font-semibold text-foreground">
                   Polytechnic University of the Philippines
                 </strong>
-                . I specialize in backend systems, cloud deployment, and
+                . I specialize in developing systems, cloud deployment, and
                 full-stack development — building platforms that hold up
                 under real-world load.
               </p>
