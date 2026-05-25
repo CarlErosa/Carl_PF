@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import { motion } from 'motion/react';
 import dynamic from 'next/dynamic';
 import { useTypewriter } from '../hooks/useTypewriter';
+import VisitorCounter from './VisitorCounter';
 
 const GlobeScene = dynamic(() => import('./ui/GlobeScene'), {
   ssr: false,
@@ -93,6 +94,8 @@ export default function Hero() {
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
           </motion.div>
+
+          <VisitorCounter />
         </div>
 
         <motion.div
