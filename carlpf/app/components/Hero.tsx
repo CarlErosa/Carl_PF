@@ -84,7 +84,9 @@ export default function Hero() {
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
             <a
-              href="mailto:carlmelvinerosa3@gmail.com"
+              href="https://www.linkedin.com/in/carl-melvin-erosa-4805b4304/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative inline-flex items-center gap-3 px-10 py-5 border-2 border-[#3A5E3D] text-[#E8EDE9] text-lg font-medium rounded-lg hover:bg-[#111714] transition-colors overflow-hidden group"
             >
               Get in Touch

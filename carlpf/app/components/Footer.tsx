@@ -55,7 +55,9 @@ export default function Footer() {
               Software & Cloud Enthusiast 
             </p>
             <a
-              href="mailto:carlmelvinerosa3@gmail.com"
+              href="https://www.linkedin.com/in/carl-melvin-erosa-4805b4304/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-[#3A5E3D] text-[#E8EDE9] text-base font-medium rounded-lg hover:bg-[#4A7A4F] transition-colors"
             >
               Get in Touch →
