@@ -166,7 +166,7 @@ export default function Hero() {
                             Level
                           </div>
                           <div className="mt-1 text-5xl font-display font-bold leading-none text-[#e8e8f2] text-glow">
-                            18
+                            19
                           </div>
                         </div>
                         <div className="pb-1 text-right">
@@ -247,7 +247,7 @@ export default function Hero() {
 
                         <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
                           <p className="text-xs font-mono uppercase tracking-[0.34em] text-[#3fd6ff]">
-                            Git / GitHub
+                            More tools & libraries
                           </p>
                           <div className="mt-3 flex flex-wrap gap-2">
                             {skillCategories[2].skills.map((skill) => (
