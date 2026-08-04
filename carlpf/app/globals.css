@@ -21,6 +21,9 @@ body {
   --color-foreground: var(--foreground);
   --font-sans: 'Inter', 'Inter Fallback';
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-display: var(--font-cinzel);
+  --color-shadow-violet: var(--shadow-violet);
+  --color-shadow-cyan: var(--shadow-cyan);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -42,21 +45,23 @@ body {
 
 :root {
   --radius: 0.75rem;
-  --background: #0D0F0E;
-  --foreground: #E8EDE9;
-  --card: #111714;
-  --card-foreground: #E8EDE9;
-  --primary: #3A5E3D;
-  --primary-foreground: #E8EDE9;
-  --secondary: #111714;
-  --secondary-foreground: #E8EDE9;
-  --muted: #1F2D22;
-  --muted-foreground: #7A9180;
-  --accent: #6FCF7C;
-  --accent-foreground: #0D0F0E;
-  --border: #1F2D22;
-  --input: #1F2D22;
-  --ring: #3A5E3D;
+  --background: #0a0a0f;
+  --foreground: #e8e8f2;
+  --card: #12121a;
+  --card-foreground: #e8e8f2;
+  --primary: #6d3fd6;
+  --primary-foreground: #e8e8f2;
+  --secondary: #14141f;
+  --secondary-foreground: #e8e8f2;
+  --muted: #14141f;
+  --muted-foreground: #a0a0b0;
+  --accent: #3fd6ff;
+  --accent-foreground: #0a0a0f;
+  --border: #1f1f2e;
+  --input: #1f1f2e;
+  --ring: #3fd6ff;
+  --shadow-violet: #4c2f8f;
+  --shadow-cyan: #3fd6ff;
 }
 
 @layer base {
@@ -69,8 +74,35 @@ body {
 }
 
 .dot-grid {
-  background-image: radial-gradient(circle, #1F2D22 1px, transparent 1px);
+  background-image: radial-gradient(circle, #2a2a3d 1px, transparent 1px);
   background-size: 24px 24px;
+}
+
+.text-glow {
+  text-shadow: 0 0 24px rgba(109, 63, 214, 0.55), 0 0 64px rgba(63, 214, 255, 0.25);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 16px rgba(63, 214, 255, 0.6);
+}
+
+.card-glow {
+  background:
+    linear-gradient(#12121a, #12121a) padding-box,
+    linear-gradient(135deg, rgba(109, 63, 214, 0.5), rgba(63, 214, 255, 0.35)) border-box;
+  border: 1px solid transparent;
+}
+
+.hero-halo {
+  background: radial-gradient(circle at center, rgba(63, 214, 255, 0.14), rgba(109, 63, 214, 0.1) 45%, transparent 70%);
+}
+
+.vertical-labels {
+  writing-mode: vertical-rl;
+}
+
+.nav-glow-underline {
+  background-image: linear-gradient(90deg, #3fd6ff, #6d3fd6);
 }
 
 @keyframes pulse-visited {

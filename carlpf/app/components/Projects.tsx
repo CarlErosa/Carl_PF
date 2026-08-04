@@ -97,7 +97,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="bg-background px-8 md:px-12 lg:px-16 py-28 md:py-36 relative border-t border-[#1F2D22]"
+      className="bg-background px-8 md:px-12 lg:px-16 py-28 md:py-36 relative border-t border-border"
     >
       <div className="absolute inset-0 pointer-events-none bg-noise" />
       <div className="max-w-7xl mx-auto relative z-10">
@@ -108,10 +108,10 @@ export default function Projects() {
           viewport={{ once: true, margin: '-80px' }}
           className="text-center mb-16"
         >
-          <h3 className="text-4xl md:text-6xl font-bold text-foreground mb-5 text-balance">
+          <h3 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-5 text-balance text-glow">
             Projects
           </h3>
-          <p className="text-[#7A9180] font-mono text-base max-w-lg mx-auto">
+          <p className="text-muted-foreground font-mono text-base max-w-lg mx-auto">
             Systems and platforms I&apos;ve built.
           </p>
         </motion.div>
@@ -129,26 +129,26 @@ export default function Projects() {
               }}
               viewport={{ once: true, margin: '-80px' }}
               whileHover={{ scale: 1.02 }}
-              className="group bg-[#111714] rounded-lg border border-transparent transition-all duration-300 hover:border-[#3A5E3D] hover:shadow-[0_0_16px_rgba(58,94,61,0.2)] flex flex-col relative overflow-hidden"
+              className="group card-glow rounded-xl transition-all duration-300 hover:shadow-[0_0_24px_rgba(109,63,214,0.2)] flex flex-col relative overflow-hidden"
             >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-[rgba(58,94,61,0.08)] to-transparent pointer-events-none" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-[rgba(63,214,255,0.06)] to-transparent pointer-events-none" />
               <div className="p-8 flex flex-col flex-1 relative z-10">
                 <div className="flex items-start justify-between mb-4 gap-3">
-                  <h4 className="text-xl font-bold text-foreground group-hover:text-[#6FCF7C] transition-colors duration-300">
+                  <h4 className="text-xl font-bold text-foreground group-hover:text-[#3fd6ff] transition-colors duration-300">
                     {project.title}
                   </h4>
-                  <span className="shrink-0 px-3 py-1 bg-[#1A2E1C] text-[#6FCF7C] text-sm font-mono rounded-md">
+                  <span className="shrink-0 px-3 py-1 border border-[#1f1f2e] bg-[#181826] text-[#3fd6ff] text-sm font-mono rounded-md">
                     {project.role}
                   </span>
                 </div>
-                <p className="text-[#7A9180] text-base leading-relaxed mb-5 flex-1">
+                <p className="text-muted-foreground text-base leading-relaxed mb-5 flex-1">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {(projectStacks[project.key] || []).map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-sm font-mono rounded-full bg-[#1A2E1C] text-[#6FCF7C]"
+                      className="px-3 py-1 text-sm font-mono rounded-full border border-[#1f1f2e] bg-[#181826] text-[#3fd6ff]"
                     >
                       {tech}
                     </span>
@@ -159,7 +159,7 @@ export default function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 bg-[#3A5E3D] px-6 py-3.5 min-h-[48px] rounded-lg text-base font-medium text-[#E8EDE9] hover:bg-[#4A7A4F] transition-colors group/btn"
+                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 bg-[#6d3fd6] px-6 py-3.5 min-h-[48px] rounded-full text-base font-medium text-[#e8e8f2] hover:bg-[#7a4be8] hover:shadow-[0_0_24px_rgba(109,63,214,0.5)] transition-all duration-300 group/btn"
                     aria-label={`View ${project.title} live site`}
                   >
                     <ExternalLink size={16} aria-hidden="true" />
@@ -172,7 +172,7 @@ export default function Projects() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 min-h-[48px] rounded-lg text-base font-medium text-foreground border border-[#1F2D22] hover:bg-[#1F2D22] transition-colors group/btn"
+                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 min-h-[48px] rounded-full text-base font-medium text-foreground border border-border hover:bg-[#1a1a26] hover:border-[#3fd6ff] hover:shadow-[0_0_20px_rgba(63,214,255,0.25)] transition-all duration-300 group/btn"
                     aria-label={`View ${project.title} source code on GitHub`}
                   >
                     <Github size={16} aria-hidden="true" />

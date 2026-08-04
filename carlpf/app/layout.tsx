@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono, Cinzel } from "next/font/google";
 import CursorFollower from "./components/CursorFollower";
 import "./globals.css";
 
@@ -11,8 +11,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["400", "700", "800"],
+  variable: "--font-cinzel",
+});
+
 export const viewport: Viewport = {
-  themeColor: "#1E2E20",
+  themeColor: "#0a0a0f",
   width: "device-width",
   initialScale: 1,
 };
@@ -43,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${geistMono.className} antialiased`}
+        className={`${inter.className} ${geistMono.className} ${cinzel.variable} antialiased`}
       >
         <CursorFollower />
         {children}

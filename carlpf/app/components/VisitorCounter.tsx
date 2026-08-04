@@ -45,8 +45,8 @@ export default function VisitorCounter() {
         transition={{ delay: 1.5, duration: 0.8 }}
         className="flex items-center gap-2 mt-10"
       >
-        <div className="w-2 h-2 rounded-full bg-[#6FCF7C]" />
-        <div className="w-16 h-4 rounded bg-[#1F2D22] animate-pulse" />
+        <div className="w-2 h-2 rounded-full bg-[#3fd6ff]" />
+        <div className="w-16 h-4 rounded bg-[#1f1f2e] animate-pulse" />
       </motion.div>
     );
   }
@@ -58,11 +58,11 @@ export default function VisitorCounter() {
       transition={{ delay: 1.5, duration: 0.8 }}
       className="flex items-center gap-2 mt-10"
     >
-      <span className="w-2 h-2 rounded-full bg-[#6FCF7C] pulse-visited" />
-      <span className="text-[#6FCF7C] font-mono text-base sm:text-lg tabular-nums">
+      <span className="w-2 h-2 rounded-full bg-[#3fd6ff] pulse-visited" />
+      <span className="text-[#3fd6ff] font-mono text-base sm:text-lg tabular-nums">
         {display.toLocaleString()}
       </span>
-      <span className="text-[#7A9180] font-mono text-sm sm:text-base">
+      <span className="text-muted-foreground font-mono text-sm sm:text-base">
         visitors
       </span>
     </motion.div>

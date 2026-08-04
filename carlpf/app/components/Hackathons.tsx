@@ -112,11 +112,11 @@ const achievements = [
 function ResultBadge({ result }: { result: string }) {
   let styles = '';
   if (result === '1st Runner Up') {
-    styles = 'bg-[#3A2E00] text-[#F5C518]';
+    styles = 'bg-[#1f1f2e] text-[#f5c518]';
   } else if (result === 'Finalist') {
-    styles = 'bg-[#1A2E1C] text-[#6FCF7C]';
+    styles = 'bg-[#181826] text-[#3fd6ff]';
   } else {
-    styles = 'bg-[#1A1F1B] text-[#7A9180]';
+    styles = 'bg-[#14141f] text-muted-foreground';
   }
   return (
     <span className={`inline-block px-3 py-1 rounded-full text-xs font-mono font-medium ${styles}`}>
@@ -131,7 +131,7 @@ export default function Hackathons() {
   return (
     <section
       id="hackathons"
-      className="bg-[#111714] px-8 md:px-12 lg:px-16 py-28 md:py-36 relative border-t border-[#1F2D22]"
+      className="bg-[#08080c] px-8 md:px-12 lg:px-16 py-28 md:py-36 relative border-t border-border"
     >
       <div className="absolute inset-0 pointer-events-none bg-noise" />
       <div className="max-w-7xl mx-auto relative z-10">
@@ -142,38 +142,38 @@ export default function Hackathons() {
           viewport={{ once: true, margin: '-80px' }}
           className="text-center mb-12"
         >
-          <h3 className="text-4xl md:text-6xl font-bold text-foreground mb-4 text-balance">
+          <h3 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-4 text-balance text-glow">
             Experience
           </h3>
-          <p className="text-[#7A9180] font-mono text-base max-w-lg mx-auto mb-10">
+          <p className="text-muted-foreground font-mono text-base max-w-lg mx-auto mb-10">
             Professional journey building at scale.
           </p>
 
           <div className="inline-flex items-center gap-8">
             <button
               onClick={() => setActiveTab('achievements')}
-              className={`relative pb-2 text-base font-medium transition-colors duration-200 ${
+              className={`relative pb-2 text-sm tracking-[0.2em] uppercase font-medium transition-colors duration-200 ${
                 activeTab === 'achievements'
-                  ? 'text-[#6FCF7C]'
-                  : 'text-[#7A9180] hover:text-[#E8EDE9]'
+                  ? 'text-[#3fd6ff] text-glow-cyan'
+                  : 'text-muted-foreground hover:text-[#e8e8f2]'
               }`}
             >
               Achievements
               {activeTab === 'achievements' && (
-                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#6FCF7C]" />
+                <span className="nav-glow-underline absolute bottom-0 left-0 right-0 h-px" />
               )}
             </button>
             <button
               onClick={() => setActiveTab('experience')}
-              className={`relative pb-2 text-base font-medium transition-colors duration-200 ${
+              className={`relative pb-2 text-sm tracking-[0.2em] uppercase font-medium transition-colors duration-200 ${
                 activeTab === 'experience'
-                  ? 'text-[#6FCF7C]'
-                  : 'text-[#7A9180] hover:text-[#E8EDE9]'
+                  ? 'text-[#3fd6ff] text-glow-cyan'
+                  : 'text-muted-foreground hover:text-[#e8e8f2]'
               }`}
             >
               Experience
               {activeTab === 'experience' && (
-                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#6FCF7C]" />
+                <span className="nav-glow-underline absolute bottom-0 left-0 right-0 h-px" />
               )}
             </button>
           </div>
@@ -196,7 +196,7 @@ export default function Hackathons() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.12, ease: 'easeOut' }}
                   whileHover={{ scale: 1.02 }}
-                  className="group bg-[#111714] rounded-xl border border-[#1F2D22] overflow-hidden transition-all duration-300 hover:border-[#6FCF7C] hover:shadow-[0_0_12px_rgba(111,207,124,0.15)]"
+                  className="group card-glow rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_24px_rgba(63,214,255,0.12)]"
                 >
                   <div className="relative w-full h-40 md:h-44 overflow-hidden">
                     <NextImage
@@ -211,7 +211,7 @@ export default function Hackathons() {
                     <h4 className="text-lg md:text-xl font-bold text-foreground mb-1">
                       {a.name}
                     </h4>
-                    <p className="text-[#7A9180] text-sm md:text-base mb-3">
+                    <p className="text-muted-foreground text-sm md:text-base mb-3">
                       {a.role} &middot; {a.year}
                     </p>
                     <ResultBadge result={a.result} />
@@ -230,7 +230,7 @@ export default function Hackathons() {
               transition={{ duration: 0.4, ease: 'easeOut' }}
             >
               <div className="max-w-4xl mx-auto relative pl-10 md:pl-14">
-                <div className="absolute left-[19px] md:left-[27px] top-2 bottom-2 w-px bg-[#3A5E3D]" />
+                <div className="absolute left-[19px] md:left-[27px] top-2 bottom-2 w-px nav-glow-underline opacity-40" />
 
                 {experiences.map((exp, index) => (
                   <motion.div
@@ -246,16 +246,16 @@ export default function Hackathons() {
                     className="relative mb-12 last:mb-0 group"
                   >
                     <div
-                      className="absolute -left-[29px] md:-left-[41px] top-1.5 w-[19px] h-[19px] md:w-[23px] md:h-[23px] rounded-full border-2 border-[#3A5E3D] bg-[#0D0F0E] transition-all duration-300 group-hover:shadow-[0_0_10px_#6FCF7C] group-hover:border-[#6FCF7C] z-10"
+                      className="absolute -left-[29px] md:-left-[41px] top-1.5 w-[19px] h-[19px] md:w-[23px] md:h-[23px] rounded-full border-2 border-[#4c2f8f] bg-[#0a0a0f] transition-all duration-300 group-hover:shadow-[0_0_12px_#3fd6ff] group-hover:border-[#3fd6ff] z-10"
                     />
 
-                    <div className="bg-[#0D0F0E] p-8 rounded-lg border-l-2 border-[#3A5E3D] transition-all duration-300 group-hover:border-[#6FCF7C]">
+                    <div className="card-glow p-8 rounded-xl border-l-2 border-[#4c2f8f] transition-all duration-300 group-hover:border-[#3fd6ff] group-hover:shadow-[0_0_20px_rgba(63,214,255,0.1)]">
                       <div className="mb-5">
                         <h4 className="text-xl font-bold text-foreground">
                           {exp.org}
                         </h4>
                         {exp.totalDuration && (
-                          <p className="text-sm font-mono text-[#7A9180] mt-0.5">
+                          <p className="text-sm font-mono text-muted-foreground mt-0.5">
                             {exp.totalDuration}
                           </p>
                         )}
@@ -265,12 +265,12 @@ export default function Hackathons() {
                         {exp.roles.map((role, i) => (
                           <div key={i}>
                             <div className="flex items-start gap-2">
-                              <div className="w-2 h-2 bg-[#3A5E3D] rounded-full mt-2 shrink-0" />
+                              <div className="w-2 h-2 bg-[#3fd6ff] rounded-full mt-2 shrink-0" />
                               <div className="min-w-0">
                                 <p className="font-semibold text-foreground">
                                   {role.title}
                                 </p>
-                                <p className="text-sm font-mono text-[#7A9180]">
+                                <p className="text-sm font-mono text-muted-foreground">
                                   {role.period}
                                   {role.duration && (
                                     <span> &middot; {role.duration}</span>
@@ -283,9 +283,9 @@ export default function Hackathons() {
                                 {role.points.map((point, j) => (
                                   <li
                                     key={j}
-                                    className="text-base text-[#7A9180] leading-relaxed pl-5 relative"
+                                    className="text-base text-muted-foreground leading-relaxed pl-5 relative"
                                   >
-                                    <span className="absolute left-0 top-[8px] w-1.5 h-1.5 rounded-full bg-[#3A5E3D]" />
+                                    <span className="absolute left-0 top-[8px] w-1.5 h-1.5 rounded-full bg-[#4c2f8f]" />
                                     {point}
                                   </li>
                                 ))}

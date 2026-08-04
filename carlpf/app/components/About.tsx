@@ -2,111 +2,76 @@
 
 import { motion } from 'motion/react';
 import NextImage from 'next/image';
-import { Wrench, Target, Zap } from 'lucide-react';
-
-const highlights = [
-  {
-    icon: Wrench,
-    title: 'Tools',
-    description: 'Node.js, Docker, AWS, Next.js, PostgreSQL, GitHub Actions',
-  },
-  {
-    icon: Target,
-    title: 'Focus',
-    description: 'Cloud infrastructure, Backend systems, CI/CD & DevOps',
-  },
-  {
-    icon: Zap,
-    title: 'Quick Facts',
-    description: 'Systems thinker, Backend-first, Scales under pressure',
-  },
-];
 
 export default function About() {
   return (
-    <section id="about" className="bg-[#111714] px-8 md:px-12 lg:px-16 py-28 md:py-36 border-t border-[#1F2D22]">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="about"
+      className="relative border-t border-white/5 bg-[#08080c] px-6 py-24 sm:px-8 md:px-12 md:py-32 lg:px-16"
+    >
+      <div className="mx-auto max-w-[84rem]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.1, margin: '-40px' }}
-          className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start"
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.15, margin: '-40px' }}
+          className="relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-[radial-gradient(circle_at_50%_10%,rgba(63,214,255,0.08),transparent_30%),radial-gradient(circle_at_90%_22%,rgba(109,63,214,0.14),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))] shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_0_60px_rgba(63,214,255,0.06)]"
         >
-          <div className="md:col-span-4">
-            <div className="relative w-full aspect-[3/4] max-w-sm md:max-w-md mx-auto rounded-2xl overflow-hidden border border-[#1F2D22]">
+          <div className="absolute inset-0 pointer-events-none bg-noise opacity-50" />
+
+          <div className="grid min-h-[36rem] grid-cols-1 lg:grid-cols-[1.18fr_0.92fr]">
+            <div className="relative min-h-[24rem] overflow-hidden border-b border-white/8 lg:min-h-full lg:border-b-0 lg:border-r lg:border-white/8">
               <NextImage
-                src="/assets/lanyard/picture.jpg"
+                src="/assets/lanyard/bg.png"
                 alt="Carl Erosa - Software & Cloud Engineer"
                 fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 500px"
+                className="object-contain object-top scale-[1.9] -translate-y-14"
+                sizes="(max-width: 1024px) 100vw, 34vw"
               />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_42%_22%,rgba(63,214,255,0.18),transparent_32%),linear-gradient(180deg,rgba(7,7,11,0.1),rgba(7,7,11,0.85))]" />
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_0%,transparent_48%,rgba(255,255,255,0.08)_52%,transparent_56%,transparent_100%)] opacity-20" />
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent,rgba(7,7,11,0.78),rgba(7,7,11,0.96))]" />
             </div>
-          </div>
 
-          <div className="md:col-span-8">
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-bold text-foreground mb-10"
-            >
-              About{' '}
-              <span className="inline-block bg-[#3A5E3D] px-5 md:px-8 py-2.5 md:py-4 rounded-xl text-[#E8EDE9] font-mono text-3xl md:text-5xl">
-                Me
-              </span>
-            </motion.h3>
+            <div className="relative px-6 py-10 sm:px-8 sm:py-12 md:px-10 lg:px-12 lg:py-14">
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="mb-10"
+              >
+                <p className="mb-4 text-xs font-mono uppercase tracking-[0.45em] text-[#3fd6ff]">
+                  About
+                </p>
+                <h3 className="max-w-[9ch] text-balance font-display text-5xl font-bold leading-[0.9] tracking-[-0.04em] text-foreground text-glow sm:text-6xl lg:text-7xl">
+                  About Me
+                </h3>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="space-y-5 text-lg md:text-xl leading-relaxed text-[#7A9180]"
-            >
-              <p>
-                I&#39;m a{' '}
-                <strong className="font-semibold text-[#6FCF7C]">
-                  Computer Engineering
-                </strong>{' '}
-                student at{' '}
-                <strong className="font-semibold text-foreground">
-                  Polytechnic University of the Philippines
-                </strong>
-                . I specialize in developing systems, cloud deployment, and
-                full-stack development — building platforms that hold up
-                under real-world load.
-              </p>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="max-w-2xl space-y-5 text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-[1.05rem]"
+              >
+                <p>
+                  I&#39;m a{' '}
+                  <strong className="font-semibold text-[#3fd6ff]">
+                    Computer Engineering
+                  </strong>{' '}
+                  student at{' '}
+                  <strong className="font-semibold text-foreground">
+                    Polytechnic University of the Philippines
+                  </strong>
+                  . I specialize in developing systems, cloud deployment, and
+                  full-stack development — building platforms that hold up
+                  under real-world load.
+                </p>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              viewport={{ once: true }}
-              className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6"
-            >
-              {highlights.map((item) => (
-                <div
-                  key={item.title}
-                  className="bg-[#0D0F0E] p-6 rounded-xl border border-[#1F2D22] hover:border-[#3A5E3D] transition-colors duration-300"
-                >
-                  <item.icon
-                    size={24}
-                    className="text-[#6FCF7C] mb-4"
-                    aria-hidden="true"
-                  />
-                  <h5 className="font-semibold mb-2 text-foreground font-mono text-base tracking-wider uppercase">
-                    {item.title}
-                  </h5>
-                  <p className="text-base leading-relaxed text-[#7A9180]">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>

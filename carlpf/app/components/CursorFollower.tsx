@@ -29,8 +29,8 @@ export default function CursorFollower() {
       if (target) {
         cursor.style.width = '28px';
         cursor.style.height = '28px';
-        cursor.style.backgroundColor = 'rgba(111, 207, 124, 0.12)';
-        cursor.style.borderColor = '#6FCF7C';
+        cursor.style.backgroundColor = 'rgba(63, 214, 255, 0.12)';
+        cursor.style.borderColor = '#3fd6ff';
       }
     };
 
@@ -42,7 +42,7 @@ export default function CursorFollower() {
         cursor.style.width = '12px';
         cursor.style.height = '12px';
         cursor.style.backgroundColor = 'transparent';
-        cursor.style.borderColor = '#6FCF7C';
+        cursor.style.borderColor = '#3fd6ff';
       }
     };
 
@@ -74,7 +74,7 @@ export default function CursorFollower() {
         width: '12px',
         height: '12px',
         borderRadius: '50%',
-        border: '1.5px solid #6FCF7C',
+        border: '1.5px solid #3fd6ff',
         backgroundColor: 'transparent',
         transform: 'translate(-50%, -50%)',
         transition: 'width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease',
