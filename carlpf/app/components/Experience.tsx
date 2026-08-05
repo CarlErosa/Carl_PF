@@ -9,7 +9,7 @@ const featured = ['director-of-engineering', 'vice-president-for-technology', 'w
 export default function Experience({ showAll = false }: { showAll?: boolean }) {
   const visible = showAll ? experiences : experiences.filter((e) => featured.includes(e.slug));
   return (
-    <section id="experience" className="border-t border-line bg-background px-6 py-16 sm:px-8 md:py-24">
+    <section id="experience" className="border-t border-line bg-background px-6 py-10 sm:px-8 md:py-16">
       <div className="mx-auto max-w-2xl">
         <SectionHeading
           index="03"

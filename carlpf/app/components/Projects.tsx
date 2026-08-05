@@ -9,7 +9,7 @@ const featured = ['verde', 'adph-registration-platform', 'icpep-ncr-website'];
 export default function Projects({ showAll = false }: { showAll?: boolean }) {
   const visible = showAll ? projects : projects.filter((p) => featured.includes(p.slug));
   return (
-    <section id="projects" className="border-t border-line bg-background px-6 py-16 sm:px-8 md:py-24">
+    <section id="projects" className="border-t border-line bg-background px-6 py-10 sm:px-8 md:py-16">
       <div className="mx-auto max-w-2xl">
         <SectionHeading
           index="05"

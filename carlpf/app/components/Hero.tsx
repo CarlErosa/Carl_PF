@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="flex min-h-[100svh] items-center bg-background px-6 py-24 sm:px-8"
+      className="flex min-h-fit items-center bg-background px-6 pt-24 pb-10 sm:px-8"
     >
       <div className="mx-auto w-full max-w-2xl text-left">
         <motion.p
