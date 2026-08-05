@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import GameLauncher from './GameLauncher';
 import ThemeToggle from './ThemeToggle';
 
 const navItems = [
@@ -73,6 +74,7 @@ export default function Sidebar() {
       <div className="mt-auto">
         <div className="flex flex-row items-center gap-2.5">
           <ThemeToggle />
+          <GameLauncher />
           {socialLinks.map((link) => (
             <a
               key={link.label}

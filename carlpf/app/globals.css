@@ -116,7 +116,7 @@ body::before {
   width: 0.55em;
   height: 1.1em;
   margin-left: 3px;
-  background-color: var(--accent);
+  background-color: var(--foreground);
   vertical-align: text-bottom;
 }
 

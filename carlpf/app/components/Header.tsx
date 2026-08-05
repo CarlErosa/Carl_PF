@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import GameLauncher from './GameLauncher';
 import ThemeToggle from './ThemeToggle';
 
 const navItems = [
@@ -60,6 +61,7 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-3">
+            <GameLauncher />
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
