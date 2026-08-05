@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUp, Check } from 'lucide-react';
 
 const socialLinks = [
   {
@@ -22,8 +22,11 @@ const socialLinks = [
   },
 ];
 
+const EMAIL = 'carlmelvinerosa3@gmail.com';
+
 export default function Footer() {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,60 +40,83 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = `mailto:${EMAIL}`;
+    }
+  };
+
   return (
     <motion.footer
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       viewport={{ once: true, margin: '-80px' }}
-      className="bg-[#08080c] px-8 md:px-12 py-20 md:py-28 border-t border-border"
+      className="border-t border-line bg-surface px-6 py-16 sm:px-8 md:py-24"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
-          <div className="md:col-span-2">
-            <h4 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4 text-balance text-glow">
-              Building systems that scale.
-            </h4>
-            <p className="text-muted-foreground font-mono text-base mb-8">
-              Software & Cloud Enthusiast 
-            </p>
-            <a
-              href="https://www.linkedin.com/in/carl-melvin-erosa-4805b4304/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 border border-[#3fd6ff]/50 bg-[#6d3fd6]/10 text-[#e8e8f2] text-base font-medium rounded-full hover:bg-[#6d3fd6] hover:shadow-[0_0_24px_rgba(109,63,214,0.5)] hover:border-[#6d3fd6] transition-all duration-300"
-            >
-              Get in Touch →
-            </a>
-          </div>
-
-          <div>
-            <h4 className="text-base font-mono font-semibold uppercase tracking-wider text-muted-foreground mb-5">
-              Connect
-            </h4>
-            <div className="flex flex-col gap-4">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.href.startsWith('mailto') ? undefined : '_blank'}
-                  rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                  className="flex items-center gap-3 text-muted-foreground hover:text-[#3fd6ff] transition-all duration-200 hover:-translate-y-0.5 group"
-                  aria-label={`Connect via ${link.label}`}
-                >
-                  <link.icon size={20} aria-hidden="true" />
-                  <span className="text-base font-medium">{link.label}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground font-mono">
-            &copy; {new Date().getFullYear()} Carl Erosa. Built with Next.js & Tailwind CSS.
+      <div className="mx-auto max-w-2xl">
+        <div className="mb-10 max-w-2xl">
+          <h2 className="text-2xl font-light tracking-tight text-foreground sm:text-3xl md:text-4xl">
+            Let&#39;s build something
+            <br />
+            that holds up.
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
+            Open to internships, hackathon teams, and engineering work. Have a
+            project in mind? I&#39;d love to hear about it.
           </p>
         </div>
+
+        <div className="flex flex-wrap items-center gap-3">
+          <a
+            href={`mailto:${EMAIL}`}
+            className="inline-flex items-center gap-3 rounded-lg bg-foreground px-5 py-2.5 text-xs font-normal text-background transition-colors duration-200 hover:bg-accent"
+          >
+            {EMAIL}
+            <span className="text-background/60" aria-hidden="true">→</span>
+          </a>
+          <button
+            type="button"
+            onClick={copyEmail}
+            className="inline-flex items-center gap-2 rounded-lg border border-line bg-white px-5 py-2.5 text-xs font-normal text-foreground transition-colors duration-200 hover:border-foreground"
+          >
+            {copied ? <Check size={12} aria-hidden="true" /> : null}
+            {copied ? 'Copied' : 'Copy'}
+          </button>
+        </div>
+
+        <div className="mt-12 flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap items-center gap-5">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith('mailto') ? undefined : '_blank'}
+                rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                className="group inline-flex items-center gap-2 text-xs font-normal text-muted-foreground transition-colors duration-200 hover:text-foreground"
+              >
+                <link.icon size={13} aria-hidden="true" />
+                {link.label}
+                <span className="text-faint-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent">
+                  ↗
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <p className="font-mono text-xs text-faint-foreground">
+            &copy; {new Date().getFullYear()} Carl Erosa &middot; Built with Next.js
+          </p>
+        </div>
+
+        <p className="mt-10 font-mono text-xs text-faint-foreground">
+          ~/carl <span className="text-accent">$</span> exit
+          <span className="caret blink" aria-hidden="true" />
+        </p>
       </div>
 
       {showBackToTop && (
@@ -99,10 +125,10 @@ export default function Footer() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-40 p-4 bg-[#4c2f8f] text-[#e8e8f2] rounded-full hover:bg-[#6d3fd6] hover:shadow-[0_0_20px_rgba(63,214,255,0.4)] transition-all duration-300 shadow-lg"
+          className="fixed right-8 bottom-8 z-40 rounded-full border border-line bg-white p-2.5 text-foreground shadow-sm transition-colors duration-200 hover:border-accent hover:text-accent"
           aria-label="Back to top"
         >
-          <ArrowUp size={20} />
+          <ArrowUp size={15} />
         </motion.button>
       )}
     </motion.footer>

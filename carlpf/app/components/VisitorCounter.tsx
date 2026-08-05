@@ -43,10 +43,10 @@ export default function VisitorCounter() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
-        className="flex items-center gap-2 mt-10"
+        className="flex items-center gap-2"
       >
-        <div className="w-2 h-2 rounded-full bg-[#3fd6ff]" />
-        <div className="w-16 h-4 rounded bg-[#1f1f2e] animate-pulse" />
+        <div className="h-2 w-2 rounded-full bg-line" />
+        <div className="h-3 w-16 animate-pulse rounded bg-line" />
       </motion.div>
     );
   }
@@ -56,13 +56,12 @@ export default function VisitorCounter() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1.5, duration: 0.8 }}
-      className="flex items-center gap-2 mt-10"
+      className="flex items-center gap-2"
     >
-      <span className="w-2 h-2 rounded-full bg-[#3fd6ff] pulse-visited" />
-      <span className="text-[#3fd6ff] font-mono text-base sm:text-lg tabular-nums">
+      <span className="font-mono text-sm tabular-nums text-foreground">
         {display.toLocaleString()}
       </span>
-      <span className="text-muted-foreground font-mono text-sm sm:text-base">
+      <span className="font-mono text-xs uppercase tracking-[0.15em] text-faint-foreground">
         visitors
       </span>
     </motion.div>
