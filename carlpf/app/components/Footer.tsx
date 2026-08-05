@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Github, Linkedin, Mail, ArrowUp, Check } from 'lucide-react';
+import TikTokIcon from './ui/TikTokIcon';
 
 const socialLinks = [
   {
@@ -14,6 +15,11 @@ const socialLinks = [
     label: 'GitHub',
     href: 'https://github.com/CarlErosa',
     icon: Github,
+  },
+  {
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@devwcarl',
+    icon: TikTokIcon,
   },
   {
     label: 'Email',

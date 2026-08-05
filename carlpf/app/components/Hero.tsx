@@ -6,6 +6,7 @@ import VisitorCounter from './VisitorCounter';
 const socialLinks = [
   { label: 'GitHub', href: 'https://github.com/CarlErosa' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/carl-melvin-erosa-4805b4304/' },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@devwcarl' },
   { label: 'Email', href: 'mailto:carlmelvinerosa3@gmail.com' },
 ];
 
@@ -58,9 +59,15 @@ export default function Hero() {
               href={link.href}
               target={link.href.startsWith('mailto') ? undefined : '_blank'}
               rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              className="text-muted-foreground transition-colors duration-200 hover:text-accent"
+              className="group text-muted-foreground transition-colors duration-200 hover:text-accent"
             >
               {link.label.toLowerCase()}
+              <span
+                aria-hidden="true"
+                className="inline-block transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              >
+                ↗
+              </span>
             </a>
           ))}
         </motion.div>

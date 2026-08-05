@@ -15,6 +15,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import GameLauncher from './GameLauncher';
 import ThemeToggle from './ThemeToggle';
+import TikTokIcon from './ui/TikTokIcon';
 
 const navItems = [
   { href: '/', label: 'Home', icon: Home },
@@ -33,6 +34,7 @@ const socialLinks = [
     icon: Linkedin,
   },
   { label: 'Email', href: 'mailto:carlmelvinerosa3@gmail.com', icon: Mail },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@devwcarl', icon: TikTokIcon },
 ];
 
 export default function Sidebar() {
@@ -72,9 +74,11 @@ export default function Sidebar() {
       </nav>
 
       <div className="mt-auto">
-        <div className="flex flex-row items-center gap-2.5">
+        <div className="flex items-center gap-2.5">
           <ThemeToggle />
           <GameLauncher />
+        </div>
+        <div className="mt-3 flex items-center gap-2.5">
           {socialLinks.map((link) => (
             <a
               key={link.label}
