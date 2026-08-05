@@ -20,7 +20,7 @@ export default function Achievements() {
             <Link
               key={a.slug}
               href={`/hackathons/${a.slug}`}
-              className="group overflow-hidden rounded-xl border border-line bg-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_36px_-20px_rgba(10,10,10,0.3)]"
+              className="group overflow-hidden rounded-xl border border-line bg-background transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_36px_-20px_rgba(10,10,10,0.3)]"
             >
               <div className="relative h-32 overflow-hidden border-b border-line">
                 <NextImage

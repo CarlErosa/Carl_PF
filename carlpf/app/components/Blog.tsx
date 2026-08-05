@@ -19,7 +19,7 @@ export default function Blog() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group grid grid-cols-1 gap-3 py-6 transition-colors duration-200 hover:bg-white sm:grid-cols-12 sm:gap-8"
+              className="group grid grid-cols-1 gap-3 py-6 transition-colors duration-200 hover:bg-surface sm:grid-cols-12 sm:gap-8"
             >
               <span className="font-mono text-xs text-faint-foreground sm:col-span-1">
                 {String(index + 1).padStart(2, '0')}
@@ -35,7 +35,7 @@ export default function Blog() {
                       {post.date}
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1 font-mono text-xs text-muted-foreground">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-line bg-background px-3 py-1 font-mono text-xs text-muted-foreground">
                       <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                       Draft
                     </span>

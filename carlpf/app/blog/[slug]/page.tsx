@@ -45,7 +45,7 @@ export default async function PostPage({
             {post.published && post.date ? (
               <p className="mt-3 font-mono text-xs text-faint-foreground">{post.date}</p>
             ) : (
-              <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1 font-mono text-xs text-muted-foreground">
+              <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-line bg-background px-3 py-1 font-mono text-xs text-muted-foreground">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Draft
               </span>

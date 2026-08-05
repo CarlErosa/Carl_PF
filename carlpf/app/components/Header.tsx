@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -46,7 +47,7 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 md:hidden ${
           isScrolled
-            ? 'border-b border-line bg-white/85 backdrop-blur-md'
+            ? 'border-b border-line bg-background/85 backdrop-blur-md'
             : 'border-b border-transparent bg-transparent'
         }`}
       >
@@ -58,14 +59,17 @@ export default function Header() {
             Carl<span className="text-accent">.</span>
           </Link>
 
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-foreground"
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-foreground"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -76,7 +80,7 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(false)}
           />
           <nav
-            className="absolute top-[64px] right-5 left-5 flex flex-col gap-1 rounded-xl border border-line bg-white p-3"
+            className="absolute top-[64px] right-5 left-5 flex flex-col gap-1 rounded-xl border border-line bg-background p-3"
             aria-label="Mobile navigation"
           >
             {navItems.map((item) => {

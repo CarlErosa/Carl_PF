@@ -82,7 +82,7 @@ export default function Footer() {
           <button
             type="button"
             onClick={copyEmail}
-            className="inline-flex items-center gap-2 rounded-lg border border-line bg-white px-5 py-2.5 text-xs font-normal text-foreground transition-colors duration-200 hover:border-foreground"
+            className="inline-flex items-center gap-2 rounded-lg border border-line bg-background px-5 py-2.5 text-xs font-normal text-foreground transition-colors duration-200 hover:border-foreground"
           >
             {copied ? <Check size={12} aria-hidden="true" /> : null}
             {copied ? 'Copied' : 'Copy'}
@@ -125,7 +125,7 @@ export default function Footer() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={scrollToTop}
-          className="fixed right-8 bottom-8 z-40 rounded-full border border-line bg-white p-2.5 text-foreground shadow-sm transition-colors duration-200 hover:border-accent hover:text-accent"
+          className="fixed right-8 bottom-8 z-40 rounded-full border border-line bg-background p-2.5 text-foreground shadow-sm transition-colors duration-200 hover:border-accent hover:text-accent"
           aria-label="Back to top"
         >
           <ArrowUp size={15} />

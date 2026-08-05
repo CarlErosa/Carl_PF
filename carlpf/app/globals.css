@@ -46,6 +46,16 @@ html.lenis body {
   --line: #e5e5e5;
 }
 
+.dark {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --muted-foreground: #a1a1aa;
+  --faint-foreground: #52525b;
+  --accent: #3b82f6;
+  --surface: #111113;
+  --line: #262626;
+}
+
 /* Layout and typography tweaks for a Bryl-like look */
 @layer components {
   .with-sidebar {
@@ -80,6 +90,10 @@ body::before {
   background-size: 20px 20px;
   pointer-events: none;
   z-index: 0;
+}
+
+.dark body::before {
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
 }
 
 @layer base {
