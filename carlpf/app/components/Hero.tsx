@@ -78,7 +78,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
           className="mt-10 font-mono text-xs text-faint-foreground"
         >
-          {`8+ projects shipped · 50K+ requests handled · 1K+ concurrent users`}
+          {`4+ orgs led · 8+ projects shipped · 2+ hackathon wins`}
         </motion.p>
 
         <div className="mt-6 flex font-mono text-xs text-faint-foreground">
