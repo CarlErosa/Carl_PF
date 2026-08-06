@@ -18,11 +18,12 @@ export default function Certifications({ showAll = false }: { showAll?: boolean 
         .filter(Boolean);
 
   return (
-    <section id="certifications" className="border-t border-line bg-background px-6 py-10 sm:px-8 md:py-16">
+    <section id="certifications" className="bg-background px-6 py-8 sm:px-8 md:py-12">
       <div className="mx-auto max-w-2xl">
         <SectionHeading
           index="04"
           title="Certifications"
+          tag="Credentials"
           description="Credentials that back the work."
         />
 
@@ -80,7 +81,7 @@ export default function Certifications({ showAll = false }: { showAll?: boolean 
             href="/certifications"
             className="mt-8 inline-block font-mono text-xs text-muted-foreground transition-colors duration-200 hover:text-accent"
           >
-            See more →
+            See more on page 2 →
           </Link>
         )}
       </div>

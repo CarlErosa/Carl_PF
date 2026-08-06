@@ -9,11 +9,12 @@ const featured = ['director-of-engineering', 'vice-president-for-technology', 'w
 export default function Experience({ showAll = false }: { showAll?: boolean }) {
   const visible = showAll ? experiences : experiences.filter((e) => featured.includes(e.slug));
   return (
-    <section id="experience" className="border-t border-line bg-background px-6 py-10 sm:px-8 md:py-16">
+    <section id="experience" className="bg-background px-6 py-8 sm:px-8 md:py-12">
       <div className="mx-auto max-w-2xl">
         <SectionHeading
           index="03"
           title="Experience"
+          tag="Careers"
           description="Organizations I've led and built with — engineering at national scale."
         />
 
@@ -48,7 +49,7 @@ export default function Experience({ showAll = false }: { showAll?: boolean }) {
             href="/experience"
             className="mt-8 inline-block font-mono text-xs text-muted-foreground transition-colors duration-200 hover:text-accent"
           >
-            See more →
+            See more on page 2 →
           </Link>
         )}
       </div>

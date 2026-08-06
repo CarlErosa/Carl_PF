@@ -42,13 +42,13 @@ html.lenis body {
 }
 
 :root {
-  --background: #ffffff;
+  --background: #f6f1e7;
   --foreground: #0a0a0a;
   --muted-foreground: #52525b;
   --faint-foreground: #a1a1aa;
-  --accent: #2563eb;
-  --surface: #fafafa;
-  --line: #e5e5e5;
+  --accent: #606d3f;
+  --surface: #ece6d8;
+  --line: #d9d1bf;
 }
 
 .dark {
@@ -56,7 +56,7 @@ html.lenis body {
   --foreground: #fafafa;
   --muted-foreground: #a1a1aa;
   --faint-foreground: #52525b;
-  --accent: #3b82f6;
+  --accent: #a3b37a;
   --surface: #111113;
   --line: #262626;
 }
@@ -82,23 +82,6 @@ html.lenis body {
 /* Headings use the Playfair Display variable when available */
 h1, h2, h3, h4 {
   font-family: var(--font-playfair), var(--font-inter), serif;
-}
-
-/* Subtle dotted background similar to the reference */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0 0 auto 0;
-  height: 100vh;
-  width: 100%;
-  background-image: radial-gradient(rgba(16,24,40,0.03) 1px, transparent 1px);
-  background-size: 20px 20px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.dark body::before {
-  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
 }
 
 @layer base {

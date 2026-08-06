@@ -14,23 +14,23 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="flex min-h-fit items-center bg-background px-6 pt-24 pb-10 sm:px-8"
+      className="flex min-h-fit items-center bg-background px-6 pt-8 pb-10 sm:px-8 sm:pt-10"
     >
       <div className="mx-auto w-full max-w-2xl text-left">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground"
+          className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground"
         >
-          ~/carl <span className="text-accent">$</span> whoami
+          <span className="text-accent">Systems Desk</span> · Manila
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
-          className="mt-6 text-4xl font-light leading-[1.05] tracking-[-0.02em] text-foreground sm:text-5xl md:text-6xl"
+          className="mt-5 text-3xl font-light leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl md:text-5xl"
           style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
         >
           Carl Erosa<span className="text-accent"></span>
@@ -39,12 +39,24 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+          className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-faint-foreground"
+        >
+          By Himself
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
           className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base"
         >
           I build systems that scale — cloud infrastructure, CI/CD pipelines,
-          and full-stack apps that hold up under real load.
-          <span className="caret blink" aria-hidden="true" />
+          and full-stack apps that hold up under real{' '}
+          <span className="whitespace-nowrap">
+            load.
+            <span className="caret blink" aria-hidden="true" />
+          </span>
         </motion.p>
 
         <motion.div
@@ -62,12 +74,6 @@ export default function Hero() {
               className="group text-muted-foreground transition-colors duration-200 hover:text-accent"
             >
               {link.label.toLowerCase()}
-              <span
-                aria-hidden="true"
-                className="inline-block transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-              >
-                ↗
-              </span>
             </a>
           ))}
         </motion.div>

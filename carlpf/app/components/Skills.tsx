@@ -48,11 +48,12 @@ export const skillCategories: SkillCategory[] = [
 
 export default function Skills() {
   return (
-    <section id="stack" className="border-t border-line bg-background px-6 py-10 sm:px-8 md:py-16">
+    <section id="stack" className="bg-background px-6 py-8 sm:px-8 md:py-12">
       <div className="mx-auto max-w-2xl">
         <SectionHeading
           index="02"
           title="Stack"
+          tag="Tech"
           description="Technologies I work with daily — from infrastructure to interfaces."
         />
 

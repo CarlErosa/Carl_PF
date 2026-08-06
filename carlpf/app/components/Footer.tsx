@@ -62,7 +62,7 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       viewport={{ once: true, margin: '-80px' }}
-      className="border-t border-line bg-background px-6 py-10 sm:px-8 md:py-16"
+      className="bg-background px-6 py-8 sm:px-8 md:py-12"
     >
       <div className="mx-auto max-w-2xl">
         <div className="mb-10 max-w-2xl">
@@ -119,9 +119,12 @@ export default function Footer() {
           </p>
         </div>
 
-        <p className="mt-10 font-mono text-xs text-faint-foreground">
-          ~/carl <span className="text-accent">$</span> exit
-          <span className="caret blink" aria-hidden="true" />
+        <p className="mt-10 text-center font-mono text-xs tracking-[0.2em] text-faint-foreground">
+          — 30 —
+        </p>
+
+        <p className="mt-6 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-faint-foreground">
+          © {new Date().getFullYear()} Carl Erosa · Printed in Manila
         </p>
       </div>
 
