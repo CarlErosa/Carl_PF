@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  Award,
   Briefcase,
   FileText,
   FolderGit2,
@@ -22,6 +23,7 @@ const navItems = [
   { href: '/blog', label: 'Blog', icon: FileText },
   { href: '/stack', label: 'Stack', icon: Layers },
   { href: '/experience', label: 'Experience', icon: Briefcase },
+  { href: '/certifications', label: 'Certifications', icon: Award },
   { href: '/hackathons', label: 'Hackathons', icon: Trophy },
   { href: '/projects', label: 'Projects', icon: FolderGit2 },
 ];

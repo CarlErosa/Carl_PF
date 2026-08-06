@@ -6,7 +6,7 @@ import SectionHeading from './SectionHeading';
 
 export default function Blog() {
   return (
-    <section id="blog" className="border-t border-line bg-surface px-6 py-10 sm:px-8 md:py-16">
+    <section id="blog" className="border-t border-line bg-background px-6 py-10 sm:px-8 md:py-16">
       <div className="mx-auto max-w-2xl">
         <SectionHeading
           index="01"

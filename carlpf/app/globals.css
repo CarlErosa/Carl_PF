@@ -5,6 +5,11 @@ html {
   overflow-x: hidden;
 }
 
+main > section:first-of-type,
+main > article:first-of-type {
+  border-top-width: 0;
+}
+
 html.lenis,
 html.lenis body {
   height: auto;
@@ -62,7 +67,7 @@ html.lenis body {
     padding-left: 0;
   }
 
-  @screen md {
+  @media (min-width: 48rem) {
     .with-sidebar {
       padding-left: 18rem; /* space for the left sidebar */
     }

@@ -7,10 +7,10 @@ import SectionHeading from './SectionHeading';
 
 export default function Achievements() {
   return (
-    <section className="border-t border-line bg-surface px-6 py-10 sm:px-8 md:py-16">
+    <section className="border-t border-line bg-background px-6 py-10 sm:px-8 md:py-16">
       <div className="mx-auto max-w-2xl">
         <SectionHeading
-          index="04"
+          index="05"
           title="Hackathons"
           description="Ships that made it to judging — built fast, built to work."
         />

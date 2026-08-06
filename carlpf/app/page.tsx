@@ -1,5 +1,6 @@
 import Achievements from './components/Achievements';
 import Blog from './components/Blog';
+import Certifications from './components/Certifications';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -18,6 +19,7 @@ export default function Home() {
         <Blog />
         <Skills />
         <Experience />
+        <Certifications />
         <Achievements />
         <Projects />
       </main>

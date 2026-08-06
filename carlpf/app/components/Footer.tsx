@@ -62,7 +62,7 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       viewport={{ once: true, margin: '-80px' }}
-      className="border-t border-line bg-surface px-6 py-10 sm:px-8 md:py-16"
+      className="border-t border-line bg-background px-6 py-10 sm:px-8 md:py-16"
     >
       <div className="mx-auto max-w-2xl">
         <div className="mb-10 max-w-2xl">

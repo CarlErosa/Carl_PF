@@ -1,17 +1,17 @@
 import BackHome from '../components/BackHome';
-import Experience from '../components/Experience';
+import Certifications from '../components/Certifications';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 
-export default function ExperiencePage() {
+export default function CertificationsPage() {
   return (
     <>
       <Sidebar />
       <Header />
       <main>
         <BackHome />
-        <Experience showAll />
+        <Certifications showAll />
       </main>
       <Footer />
     </>
