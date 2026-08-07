@@ -50,7 +50,7 @@ export const certifications: Certification[] = [
   },
   {
     slug: 'claude-code-101',
-    name: 'Claude 101',
+    name: 'Claude Code 101',
     issuer: 'Anthropic',
     year: '2026',
     category: 'AI',
